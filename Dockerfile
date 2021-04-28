@@ -16,7 +16,7 @@ RUN set -ex && \
 	# Install IceStorm Tools
 	git clone --depth 1 clone https://github.com/YosysHQ/icestorm.git /tmp/icestorm && \
 	cd /tmp/icestorm && \
-    make -j$(nproc) && \
+	make -j$(nproc) && \
 	make install && \
 
 	# Install NextPNR
