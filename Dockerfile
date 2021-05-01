@@ -18,7 +18,7 @@ RUN set -ex && \
 
 	git clone --depth 1 https://github.com/YosysHQ/nextpnr /tmp/nextpnr && \
 	cd /tmp/nextpnr && \
-	sed -i 's/-O3/-O3 -U_FORTIFY_SOURCE/' CMakeLists.txt &&
+	sed -i 's/-O3/-O3 -U_FORTIFY_SOURCE/' CMakeLists.txt && \
 	cmake -DARCH=ice40 -DCMAKE_INSTALL_PREFIX=/usr/local -DEigen3_DIR=/usr/share/cmake/Modules . && \
 	make -j$(nproc) && \
 	make install && \
